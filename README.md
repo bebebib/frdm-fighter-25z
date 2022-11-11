@@ -38,6 +38,9 @@ arm-none-eabi-gdb --version
 arm-none-eabi-size --version
 ```
 
+# BSP needs to be generated from the IDE, for now use the basic config from demo_apps/hello_world
+# Need a way to do this without having to mess with SDK over and over...
+
 # TODO
 
 1. Get CMAKE project to work with J-Link flashing, so everything can be done out of VS Code
