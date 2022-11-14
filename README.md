@@ -38,8 +38,21 @@ arm-none-eabi-gdb --version
 arm-none-eabi-size --version
 ```
 
-# BSP needs to be generated from the IDE, for now use the basic config from demo_apps/hello_world
-# Need a way to do this without having to mess with SDK over and over...
+# How to configure FRDM-KL25Z for J-Link Compatibility
+1. Hold the reset button while board is powered off, and plug it in
+2. Install J-Link firmware from the board from https://www.segger.com/downloads/jlink/OpenSDA_FRDM-KL25Z
+3. Copy and paste the file from the above download to `BOOTLOADER:/`
+4. Unplug and repower the board normally, should now be a J-Link device!
+
+# Debugging this with J-Link
+1. This is configured for VS Code WSL Ubuntu compatibility, please modify launch.json for how you wish to launch this
+2. If you are using WSL Ubuntu, please launch the SEGGER J-Link Remove Server software in Windows
+    - Make sure that it connects to the probe! Do `How to configure FRDM-KL25Z for J-Link Compatibility` if this does not happen
+3. You should be able to "run and debug" the `Debug J-Link` config in VS Code, and the debugger should launch properly!
+4. BAM! No need for MCUXpresso (except to regenerate / configure BSP...)
+
+### BSP needs to be generated from the IDE, for now use the basic config from demo_apps/hello_world
+### Need a way to do this without having to mess with SDK over and over...
 
 # TODO
 

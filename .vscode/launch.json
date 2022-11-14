@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+    "type": "cortex-debug",
+    "request": "launch",
+    "name": "Debug J-Link",
+    "cwd": "${workspaceRoot}",
+    "executable": "${workspaceRoot}/build/main.out",
+    "serverpath": "/opt/SEGGER/JLink_V782b/JLinkGDBServerCLExe", 
+    "servertype": "jlink",
+    "device": "MKL25Z128xxx4",
+    "interface": "swd",
+    // TODO: do we even need this??
+    // "jlinkscript":"${workspaceRoot}/BSP/SEGGER/K66FN2M0_emPower/Setup/Kinetis_K66_Target.js",
+    "runToMain": true,
+    // TODO: find the right svdFile for debugging!
+    // "svdFile": "${workspaceRoot}/SVD/MK66F18.svd" 
+    "ipAddress": "192.168.1.132"
+    }
+    ]
+  }
