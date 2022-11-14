@@ -33,6 +33,8 @@
 #include "board.h"
 
 #include "pin_mux.h"
+
+#include <cstdio>
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -57,11 +59,11 @@ int main(void)
     BOARD_BootClockRUN();
     BOARD_InitDebugConsole();
 
-    PRINTF("hello world again!\r\n");
+    printf("Hello World! I want to use my own printf...");
 
     while (1)
     {
-        ch = GETCHAR();
-        PUTCHAR(ch);
+        ch = getchar();
+        putchar(ch);
     }
 }

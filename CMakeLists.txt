@@ -28,11 +28,12 @@ set(CMAKE_CXX_COMPILER "/usr/bin/arm-none-eabi-g++")
 # Include
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/ArmCompileLink.cmake)
 
-# Add our BSP
+# Add our subdirs
 add_subdirectory(bsp)
+add_subdirectory(libfcn)
 
 # Our executable!
 add_executable(main.out main.cpp)
 
 # Link the BSP to our main
-target_link_libraries (main.out PUBLIC board startup)
+target_link_libraries (main.out PUBLIC board startup libfcn)

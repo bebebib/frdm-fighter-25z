@@ -56,9 +56,7 @@ arm-none-eabi-size --version
 
 # TODO
 
-1. Get CMAKE project to work with J-Link flashing, so everything can be done out of VS Code
-    - Rebuilding hello world here... going to try and compile!
-2. Make a basic "console" with integrated UART
-3. Import Zephyr OS to make this project RTOS based
-4. Create a "console game" that can be ran
-    - Need ideas for this..
+1. Create a "flashable" build target
+2. Some CMake automation for finding packages?
+3. Use stdlib print and scan
+4. Make the actual game!

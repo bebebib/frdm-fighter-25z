@@ -10,8 +10,8 @@ set(PROJECT_SYMBOLS "-DCPU_MKL25Z128VLK4 \
 -DFRDM_KL25Z -DFREEDOM \
 -DSDK_DEBUGCONSOLE=1 \
 -DCR_INTEGER_PRINTF \
--D__MCUXPRESSO \
--D__USE_CMSIS ")
+-D__GNUC__=1 \
+-D__USE_CMSIS ") #Instead of -D__MCUXPRESSO , use __GNUC__
 
 # No optimization
 set(OPTIMIZATION_LEVEL "-O0")
@@ -26,7 +26,8 @@ set(COMPILER_OPTIONS "${PROJECT_SYMBOLS} ${OPTIMIZATION_LEVEL} ${WARNING_FLAGS} 
 set(PROJECT_LINKER_SCRIPT "-Xlinker -T ${CMAKE_SOURCE_DIR}/linker/autogen_linker.ld")
 
 # Linker flags
-set(CMAKE_EXE_LINKER_FLAGS "--specs=nosys.specs -Xlinker --gc-sections  ${PROJECT_LINKER_SCRIPT} ${COMPILER_OPTIONS}")
+# not usig --specs=nosys.specs for now..
+set(CMAKE_EXE_LINKER_FLAGS " -Xlinker --gc-sections  ${PROJECT_LINKER_SCRIPT} ${COMPILER_OPTIONS}")
 
 set(CMAKE_C_FLAGS ${COMPILER_OPTIONS} )
 set(CMAKE_CXX_FLAGS ${COMPILER_OPTIONS})
