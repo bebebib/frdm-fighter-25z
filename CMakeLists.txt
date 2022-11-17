@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.16.3)
+cmake_minimum_required (VERSION 3.10.2)
 
 # Skip compiler tests...
 set(CMAKE_C_COMPILER_WORKS 1)
