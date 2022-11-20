@@ -47,6 +47,46 @@
 /*******************************************************************************
  * Code
  ******************************************************************************/
+ int currPos = 0;
+ int currRow = 12;
+ #define ngetc(c) (read (0, (c), 1))
+
+void delay (void)
+{
+    for (int i = 0; i < 800000; i++){}
+}
+
+void addLine (bool drawChar)
+{
+    for (int i = 0; i < 80; i++)
+    {
+        if (i == currPos && drawChar)
+        {
+            printf("O");
+        }
+        else
+        {
+            printf(" ");
+        }
+    }
+    printf("\r\n");
+ }
+
+ void updateScreen (void)
+ {
+     for (int i = 0; i < 24; i++)
+     {
+         if (i == currRow)
+         {
+            addLine(true); 
+         }
+         else
+         {
+            addLine(false);
+         }
+     }
+ }
+
 /*!
  * @brief Main function
  */
@@ -59,11 +99,35 @@ int main(void)
     BOARD_BootClockRUN();
     BOARD_InitDebugConsole();
 
-    printf("Hello World! I want to use my own printf...");
+    printf("Use 80 x 24 Terminal settings \r\n");
+    ch = getchar();
+    updateScreen();
 
     while (1)
     {
+        // Non nonblocking (for now...)
         ch = getchar();
-        putchar(ch);
+        if (ch == 'd')
+        {
+            currPos++;
+        }
+        else if (ch == 'a')
+        {
+            currPos--;
+        }
+        else if (ch == 'w')
+        {
+            currRow--;
+        }
+        else if (ch == 's')
+        {
+            currRow++;
+        }
+        delay();
+        updateScreen();
+        if (currPos == 80)
+        {
+            currPos = 0;
+        }
     }
 }

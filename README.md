@@ -1,3 +1,13 @@
+# TODO
+Lets make pong! Why not...
+
+# How to run when board is flashed
+1. Open minicom to 80 x 24 size and 921600 baud (or any other terminal software)
+    - `sudo minicom -b 921600 -D /dev/ACM0`
+    - can be other device for `-D` arg 
+2. Select correct COM port!
+3. """Game""" can be started!
+
 # Links to get started
 https://www.nxp.com/document/guide/get-started-with-the-frdm-kl25z:NGS-FRDM-KL25Z#0
 
