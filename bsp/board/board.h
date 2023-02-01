@@ -50,7 +50,7 @@
 #define BOARD_UART_IRQ_HANDLER UART0_IRQHandler
 
 #ifndef BOARD_DEBUG_UART_BAUDRATE
-#define BOARD_DEBUG_UART_BAUDRATE 921600
+#define BOARD_DEBUG_UART_BAUDRATE 115200
 #endif /* BOARD_DEBUG_UART_BAUDRATE */
 
 /* Define the port interrupt number for the board switches */

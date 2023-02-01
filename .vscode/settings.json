@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "fsl_port.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": true
+}

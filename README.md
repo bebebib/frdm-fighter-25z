@@ -1,12 +1,7 @@
 # TODO
-Lets make pong! Why not...
+Fidget thing of sorts
 
 # How to run when board is flashed
-1. Open minicom to 80 x 24 size and 921600 baud (or any other terminal software)
-    - `sudo minicom -b 921600 -D /dev/ACM0`
-    - can be other device for `-D` arg 
-2. Select correct COM port!
-3. """Game""" can be started!
 
 # Links to get started
 https://www.nxp.com/document/guide/get-started-with-the-frdm-kl25z:NGS-FRDM-KL25Z#0
@@ -63,10 +58,3 @@ arm-none-eabi-size --version
 
 ### BSP needs to be generated from the IDE, for now use the basic config from demo_apps/hello_world
 ### Need a way to do this without having to mess with SDK over and over...
-
-# TODO
-
-1. Create a "flashable" build target
-2. Some CMake automation for finding packages?
-3. Use stdlib print and scan
-4. Make the actual game!

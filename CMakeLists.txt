@@ -5,16 +5,14 @@ set(CMAKE_C_COMPILER_WORKS 1)
 set(CMAKE_CXX_COMPILER_WORKS 1)
 
 # Pretty...
-message("")
-message("    >=>    >=>       >=>          >===>                                        >=>")
-message(" >=>   >=> >=>       >=>        >>    >=>                                      >=>")
-message(">=>        >=>       >=>       >=>            >=> >=>  >===>>=>>==>    >==>    >=>")
-message(">=>        >=>       >=>       >=>          >=>   >=>   >=>  >>  >=> >>   >=>  >> ")
-message(">=>        >=>       >=>       >=>   >===> >=>    >=>   >=>  >>  >=> >>===>>=> >> ")
-message(">=>   >=> >=>       >=>        >=>    >>   >=>   >=>   >=>  >>  >=> >>           ")
-message("   >===>   >=======> >=>         >====>      >==>>>==> >==>  >>  >=>  >====>   >=>")
-message("")
 
+message(" ________  _______     ______   ____    ____  ")
+message("|_   __  ||_   __ \\   |_   _ `.|_   \\ \ /   _| ")
+message("  | |_ \\_|  | |__) |    | | `. \\ |   \\/   |   ")
+message("  |  _|     |  __ /     | |  | | | |\\  /| |   ")
+message(" _| |_     _| |  \\ \\_  _| |_.' /_| |_\\/_| |_  ")
+message("|_____|   |____| |___||______.'|_____||_____| ")
+                                              
 project(frdm_cli_game)
 
 # Generic ARM build
@@ -33,7 +31,12 @@ add_subdirectory(bsp)
 add_subdirectory(libfcn)
 
 # Our executable!
-add_executable(main.out main.cpp)
+add_executable(main.out 
+                src/main.cpp
+                src/clock.cpp
+                src/clock.h
+                src/led.cpp
+                src/led.h)
 
 # Link the BSP to our main
 target_link_libraries (main.out PUBLIC board startup libfcn)

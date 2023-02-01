@@ -16,7 +16,7 @@
     "runToMain": true,
     // TODO: find the right svdFile for debugging!
     // "svdFile": "${workspaceRoot}/SVD/MK66F18.svd" 
-    "ipAddress": "192.168.1.132"
+    "ipAddress": "192.168.1.130"
     }
     ]
   }
